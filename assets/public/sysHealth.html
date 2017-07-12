@@ -1,0 +1,56 @@
+<body ng-controller="mainController">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Enter Values</h4>
+                            </div>
+                            <div class="content">
+                                <form ng-submit="submit()">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Start Time(hhmmss)</label>
+                                                <input type="text" class="form-control" placeholder="Start Time" ng-model="start" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>End Time(hhmmss)</label>
+                                                <input type="text" class="form-control" placeholder="End Time" ng-model="end" required="required">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-info btn-fill pull-right">Get Results</button>
+                                    <div class="clearfix"></div>
+                               
+                                
+                            <div class="row">
+                                                            <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Current CPU Utilization(%)</label>
+                                <input type="text" class="form-control" ng-model="result1 | number: 2" disabled="true">
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                 <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Current Memory Utilization(%)</label>
+                                <input type="text" class="form-control" ng-model="result2 | number: 2" disabled="true">
+                                            </div>
+                                        </div>
+                                        </div>
+                                   <div class="clearfix">{{message}}</div>
+
+                                         </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>

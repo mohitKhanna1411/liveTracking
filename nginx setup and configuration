@@ -1,0 +1,52 @@
+NGINX SET-UP AND CONFIGURATION
+
+
+STEP-1
+
+
+Download and install nginx
+
+$ sudo apt-get install nginx
+
+
+STEP-2
+
+
+Configuring nginx
+
+$ cd /etc/nginx
+$ cd sites-available
+$ sudo vi default
+
+
+STEP-3
+
+
+Find
+-root /var/www/example.com;
+
+Change to path to your folder
+
+eg:-
+-root /home/mohit/Desktop/numadic;
+
+
+STEP-4
+
+
+Find
+listen 80;
+listen [::]:80;
+
+Change port as you want
+
+eg:-
+listen 3000;
+listen [::]:3000;
+
+
+STEP-5
+
+
+After changing, restart the service
+$ sudo service nginx restart

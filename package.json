@@ -1,0 +1,13 @@
+{
+  "name": "numadic-question",
+  "version": "0.0.1",
+  "description": "nodejs web-app",
+  "dependencies": {
+    "convert-string": "^0.1.0",
+    "date-and-time": "^0.4.0",
+    "express": "^4.15.2",
+    "get-ip": "^1.2.0",    
+    "mongoose": "^4.9.3",
+    "public-ip": "^2.3.3"
+  }
+}

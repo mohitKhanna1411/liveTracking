@@ -1,0 +1,69 @@
+GENERATING CERTIFICATES
+
+
+STEP-1
+
+
+The first step is to create a private key. As an example we can use the following command, generating a file called 'server.enc.key'.
+
+$ openssl genrsa -des3 -out server.enc.key 2048
+Generating RSA private key, 2048 bit long modulus
+....................................................................................+++
+.....................................................................................................+++
+e is 65537 (0x10001)
+Enter pass phrase for server.enc.key:
+Verifying - Enter pass phrase for server.enc.key:
+
+The generated RSA key is a 1024-bit key encrypted using triple DES. The file is human readable.
+
+
+STEP-2
+
+
+Once we have our key generated we need to issue a certificate signing request. A request can be generated using the following command.
+
+$ openssl req -new -key server.enc.key -out server.csr
+Enter pass phrase for server.enc.key:
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:IN
+State or Province Name (full name) [Some-State]:Dehradun
+Locality Name (eg, city) []:Panditwari
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:UPES
+Organizational Unit Name (eg, section) []:CS
+Common Name (e.g. server FQDN or YOUR name) []:Mohit Khanna
+Email Address []:khanna.mohit94@gmail.com
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:mohitk
+An optional company name []:numadic
+
+The created CSR is stored in the server.csr file. We will be required to self-sign this file.
+
+
+STEP-3
+
+
+Until this point it is required to enter the pass-phrase when using the key from the server.enc.key file. Since we will only use the certificate internally we can think about removing the password protection
+
+$ openssl rsa -in server.enc.key -out server.key
+Enter pass phrase for server.enc.key:
+writing RSA key
+
+Here the original (encrypted) file server.enc.key is transformed to the (unencrypted) file server.key.
+
+
+STEP-4
+
+
+Finally we have to self-sign the certificate. The self-signed certificate will generate an error in browsers. The reason is that the signing certificate authority is unknown and therefore not trusted. To generate a temporary certificate server.crt we need to issue the following command:
+
+$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+
+The created certificate will expire in 365 days after issuing.

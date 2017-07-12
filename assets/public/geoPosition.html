@@ -1,0 +1,81 @@
+<body ng-controller="geoController">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Enter Values</h4>
+                            </div>
+                            
+                                <form ng-submit="submit()">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Device Name(eg Device001,Device002...)</label>
+                                                <input type="text" class="form-control" placeholder="Device Name" ng-model="device" required="required">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Start Time(hhmmss)</label>
+                                                <input type="text" class="form-control" placeholder="Start Time" ng-model="start" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>End Time(hhmmss)</label>
+                                                <input type="text" class="form-control" placeholder="End Time" ng-model="end" required="required">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-info btn-fill pull-right">Get Results</button>
+                                         </form>
+
+                                    <div class="clearfix"></div>
+                               
+                                <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Geographical Positions</h4>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <th>S.NO</th>
+                                        <th>Latitude</th>
+                                        <th>Longitude</th>
+                                        <th>Status</th>
+                                        <th>Timestamp</th>
+                                        <th>Speed</th>
+                                    </thead>
+                                    <tbody ng-repeat = "list in list">
+                                        <tr>
+                                            <td>{{$index+1}}</td>
+                                            <td>{{list.latitude | number : 2}}</td>
+                                            <td>{{list.longitude | number : 2}}</td>
+                                            <td>{{list.status}}</td>
+                                            <td>{{list.unixTimeStamp}}</td>
+                                            <td>{{list.speed}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                    <div>{{message1}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                      
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
