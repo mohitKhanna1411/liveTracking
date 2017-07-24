@@ -1,9 +1,8 @@
-# NUMADIC ASSIGNMENT
+# LIVE TRACKING
 
+This project is all about knowing the details of the client which gets connected to the server. By fetching the details such as Latitude, Longitude, Speed, TimeStamp, Status etc We can perform many tasks which gets us to know our client much better.
 
-Numadic Assignment is a full-stack developer test given by NUMADIC IOT PVT. LTD. for the assesment of the candidate(i.e MOHIT KHANNA). This project is all about knowing the details of the client which gets connected to the server. By fetching the details such as Latitude, Longitude, Speed, TimeStamp, Status etc We can perform many tasks which gets us to know our client much better.
-
-Also this assignment(product) is a multi-client web application where number of clients get connected to the server and the server then fetch some details about the client and thus produces desired results accordingly.
+Also this ProducT is a multi-client web application where number of clients get connected to the server and the server then fetch some details about the client and thus produces desired results accordingly.
 
 This product is used to find 
 1. Local-Sys Health in a given time which can be studied to improve the performance of the server.
